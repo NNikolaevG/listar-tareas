@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>37-Lista Tareas V2</title>
+    <meta name="description" content="Ejercicios que haremos en clase del curso de confección de páginas web" />
+    <meta name="keywords" content="html,css,javascript,web,curso,ejercicio" />
+    <meta name="author" content="Óscar Rey" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/fav-icon.png" />
+
+    <!-- Cargo iconos básicos de bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+
+    <!-- Cargo mi hoja de estilos de BOOTSTRAP (cargar siempre al final) -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Cargo mi hoja de estilos (cargar siempre al final) -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+
+    <main class="container ">
+
+        <form class="row" onsubmit="anadirTarea(); return false">
+            <div class="d-none d-lg-block col-lg-3"></div>
+            <div class="col-lg-6">
+                <h1 class="my-4 text-center ">Listado de tareas V2</h1>
+                <label class="form-label text-center" for="f-trea">Nueva Tarea</label>
+                <input class="form-control" name="f-tarea" id="f-tarea" type="text" placeholder="Ej comprar">
+                <div class="text-center">
+                    <button class="btn btn-success my-4 " type="submit">Añadir</button>
+                </div>
+                <table class="table table-striped text-center ">
+                    <thead>
+                        <tr>
+                            <th colspan="5" class="bg-success text-light">Mi lista de Tareas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-none d-lg-block col-lg-3"></div>
+        </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="exampleModalLabel">Editar Tarea</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form onsubmit="modificarTarea(); return false ">
+                        <div class="modal-body">
+                            <label class="form-label text-center" for="f-trea-mod">Nombre de la Tarea</label>
+                            <input class="form-control" name="f-tarea-mod" id="f-tarea-mod" type="text"
+                                placeholder="Ej comprar">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" data-bs-dismiss="modal"
+                                class="btn btn-primary">Modificar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+    </footer>
+
+
+    <!-- Cargo el fichero JS de BOOTSTRAP -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Cargo mi fichero .js -->
+    <!-- atributo defer pone el fichero al final de la pagina aunque este colocado al principio del index -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
